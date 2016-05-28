@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <title>Video with markers</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/video-js.min.css"/>
+    <link rel="stylesheet" href="css/videojs.markers.min.css"/>
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/video.min.js"></script>
+    <script src="js/videojs-markers.min.js"></script>
+  </head>
+  <body>
+      <video 
+        id="example_video_1" 
+        class="video-js vjs-default-skin"
+        controls 
+        preload="auto" 
+        autoplay
+        width="640" 
+        height="360"
+        data-setup='{"width": 640, "height": 360}'>
+      <source src="var/BigBuckBunny_320x180.mp4" type='video/mp4' />
+    </video>  
+
+    <script type="text/javascript">
+      // load video object
+      var video = videojs('example_video_1');
+
+      //load markers
+      video.markers({
+        markers: [
+          {time: 9.5, text: "this"},
+          {time: 150,  text: "is"},
+          {time: 250,text: "so"},
+          {time: 370,  text: "cool"}
+        ]
+      });
+    </script>
+  </body>
+</html>
